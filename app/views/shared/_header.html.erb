@@ -1,3 +1,5 @@
+<!-- This file (header) takes care of our navigation -->
+
 <header role="banner"> 
 	<nav class="navbar navbar-default navbar-fixed-top"> 
 	<div class="container-fluid">  
@@ -16,18 +18,29 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li> <%= link_to "Sign up", new_user_registration_path %></li>
-				<li><%= link_to "Sign in", new_user_session_path %></li>
+			
 				<!-- When you delete something you have to provide the method. Here, we're deleting the session  -->
-				<li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+				
 				<% if user_signed_in? %>
+					<!-- if the user is signed in -->
+					<li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
 					<div class="navbar-right">
 						<p class="navbar-text">
 							Signed in as <%= "#{current_user.email}" %>
 						</p>
 					</div>
+				<% else %>
+					<!-- if the user is not signed in -->
+					<li> <%= link_to "Sign up", new_user_registration_path %></li>
+					<li><%= link_to "Sign in", new_user_session_path %></li>
 				<% end %>
 			</ul>
 		</div> 
 	</nav>    
 </header>
+
+
+
+
+
+
