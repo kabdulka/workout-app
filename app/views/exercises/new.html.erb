@@ -1,0 +1,18 @@
+<h1 class="text-center"> 
+<!-- we need to assign user full name in user model
+by creating a method called user name -->
+	New Exercise for <%= current_user.full_name %>
+</h1>
+
+<%= render 'form' %>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="col-md-10 col-md-offset-2">
+			<%= link_to "Back", user_exercises_path(current_user), class: "btn btn-primary link", id: 'new-exer-btn' %>
+			<!-- This means the current user's workout lounge -->
+		</div>
+	</div>
+</div>
+
+<!-- We need to create the user name in the  -->

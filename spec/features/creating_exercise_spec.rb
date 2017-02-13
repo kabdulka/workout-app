@@ -40,7 +40,7 @@ RSpec.feature "creating Exercise" do
 		fill_in "Duration", with: 70
 		fill_in "Workout Details", with: "Weight lifting"
 		fill_in "Activity date", with: "2017-02-12"
-		click_button "create Exercise"
+		click_button "Create Exercise"
 
 		# so at this point if the exercise is created we'll want some
 		# kind of expectation
