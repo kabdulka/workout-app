@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :exercises
   validates :first_name, presence: true
   validates :last_name, presence: true
+  self.per_page = 5
 
   # Need to create an exercise model then we have a foriegn key for user
   # ID in the exercises table that the model will generate so that we can
