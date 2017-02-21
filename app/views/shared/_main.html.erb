@@ -4,7 +4,7 @@
 		<% flash.each do |name, msg| %>
 			<div class='alert alert-<%="#{name}" %>'>  
 			 <!-- &#215 is the x that closes the flash messege at end of screen -->
-				<a href='#' class='close' data-dismiss='alert' &#215;></a>
+				<a href='#' class='close' data-dismiss='alert'>&#215;</a>
 				<%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
 			</div>
 			<% end %>
