@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   # this is a one to many association
   # so a user can have many exercises
   has_many :exercises
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 
   # Need to create an exercise model then we have a foriegn key for user
   # ID in the exercises table that the model will generate so that we can
