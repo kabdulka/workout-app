@@ -12,4 +12,12 @@ class Exercise < ActiveRecord::Base
   # the workout for it to work, otherwise it won't
   # each workout has to have a user id
   validates :user_id, presence: true
+
+  #show user workouts for the last 7 days
+  # implemet that last 7 days
+  # to implement give a default scope
+  default_scope { where('workout_date > ?', 7.days.ago).order(workout_date: :desc)}
+
 end
+
+# moris.js provides graphical user interface for data

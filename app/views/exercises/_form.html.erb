@@ -16,7 +16,7 @@ a standard form where we're going to add exercises -->
 				</div> 
 			<% end %> 
  
-			<div class="form-group"> 
+			<div id='all_fields' class="form-group"> 
 				<div class="control-label col-md-2"> 
 					<%= f.label :duration_in_min, "Duration (min)" %> 
 				</div> 
@@ -42,7 +42,7 @@ a standard form where we're going to add exercises -->
 				we need this id to reference it in our
 				javascript code-->
 				<div class="col-md-10"> 
-					<%= f.text_field :workout_date, class: "form-control", id: 'workout-date' %>  
+					<%= f.text_field :workout_date, class: "form-control", id: "exercise_workout_date"%>  
 				</div> 
 			</div> 
  			

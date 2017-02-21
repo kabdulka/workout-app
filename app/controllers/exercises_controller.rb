@@ -5,7 +5,7 @@ class ExercisesController < ApplicationController
 
 	#add index action here
 	def index
-
+		@exercises = current_user.exercises.all
 	end
 	
 	# need to create an index template, which will be users' lounge
@@ -28,6 +28,20 @@ class ExercisesController < ApplicationController
 		else 
 			flash[:danger] = "Exercise has not been created"
 			render :new
+		end
+	end
+
+	def edit
+
+	end
+
+	def update
+		if @exercise.update(exercise_params)
+			flash[:success] = "Exercise has been updated"
+			redirect_to [current_user, @exercise]
+		else
+			flash[:danger] = "Exercise has no been updated"
+			render :edit
 		end
 	end
 
