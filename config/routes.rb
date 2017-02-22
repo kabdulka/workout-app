@@ -10,6 +10,12 @@ Rails.application.routes.draw do
     resources :exercises
   end
 
+  resource :dashboard, only: [:index] do
+    collection do
+      post :search, to: 'dashboard#search'
+    end
+  end
+
   # You can have the root of your site routed with "root"
   root to: 'dashboard#index'
 
