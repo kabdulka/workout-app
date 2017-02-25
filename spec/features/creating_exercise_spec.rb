@@ -8,7 +8,10 @@ RSpec.feature "creating Exercise" do
 
 # so first create the user
 	before do
-		@john = User.create(email: "john@example.com", password: "password")
+		@john = User.create(first_name: "John", 
+			last_name: "Doe",  
+			email: "john@example.com", 
+			password: "password")
 # And then we want jonh (user) to log in because we don't
 # users who are not logged in to be able to create an
 # exercise 
