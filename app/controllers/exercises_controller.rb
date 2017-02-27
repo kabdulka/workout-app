@@ -6,6 +6,7 @@ class ExercisesController < ApplicationController
 	#add index action here
 	def index
 		@exercises = current_user.exercises.all
+		@friends = current_user.friends
 	end
 	
 	# need to create an index template, which will be users' lounge
