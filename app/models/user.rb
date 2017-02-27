@@ -9,6 +9,14 @@ class User < ActiveRecord::Base
   has_many :exercises
   validates :first_name, presence: true
   validates :last_name, presence: true
+  has_many :friendships
+  # Note: we don't have a table or a model for friends
+  # they're still users but since we're referring to them
+  # as friends we need to specify that it is the class of 
+  # user (this is bending the convention of Rails)
+  # therefore, we need to specify the class name (user in this case)
+  has_many :friends, through: :friendships, class_name: "User"
+
   self.per_page = 5
 
   # Need to create an exercise model then we have a foriegn key for user
@@ -38,7 +46,9 @@ class User < ActiveRecord::Base
     end
   end
 
-
+  def follows_or_same?(new_friend)
+    friendships.map(&:friend).include?(new_friend) || self == new_friend
+  end
 
 end
 
